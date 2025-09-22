@@ -78,19 +78,22 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 103, 71, 0.2);
     transition: all 0.3s ease;
-    padding: 1rem 0;
+    padding: 1rem;
+    width: 100%;
 }
 
 .navbar.scrolled {
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
     background: rgba(0, 103, 71, 0.95);
 }
 
 .navbar-brand {
     color: var(--usf-white) !important;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
     font-family: 'Source Sans Pro', sans-serif;
+    white-space: normal;
+    line-height: 1.2;
 }
 
 .navbar-brand img {
@@ -103,15 +106,20 @@ body {
     transform: scale(1.1);
 }
 
+.navbar-nav {
+    padding: 0.5rem 0;
+}
+
 .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.95) !important;
     font-weight: 500;
-    margin: 0 8px;
-    padding: 10px 18px !important;
+    margin: 0.25rem 4px;
+    padding: 8px 16px !important;
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .navbar-nav .nav-link:hover,
@@ -146,11 +154,12 @@ body {
 /* Hero Section - Enhanced with Video */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
     background: linear-gradient(135deg, var(--usf-green) 0%, var(--usf-dark-green) 100%);
+    padding: 6rem 0 3rem;
 }
 
 .hero-video {
@@ -224,17 +233,19 @@ body {
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: clamp(2rem, 4vw, 4rem);
     flex-wrap: wrap;
-    margin-top: 4rem;
+    margin-top: clamp(2rem, 4vw, 4rem);
 }
 
 .hero-stat {
     text-align: center;
+    flex: 0 1 auto;
+    min-width: 150px;
 }
 
 .hero-stat h3 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     font-weight: 900;
     color: var(--usf-gold);
     margin-bottom: 0.5rem;
@@ -244,38 +255,6 @@ body {
 .hero-stat p {
     font-size: 1rem;
     opacity: 0.9;
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-}
-
-.scroll-indicator a {
-    color: var(--usf-gold);
-    font-size: 2rem;
-    text-decoration: none;
-    animation: bounce 2s infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--usf-gold);
-    transition: all 0.3s ease;
-}
-
-.scroll-indicator a:hover {
-    background: var(--usf-gold);
-    color: var(--usf-green);
-    transform: translateX(-50%) scale(1.1);
 }
 
 /* Section Styles */
@@ -1008,21 +987,73 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+        max-width: 200px;
+    }
+
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .navbar-collapse {
+        background: var(--usf-green);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem !important;
+        margin: 0.25rem 0;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 5rem 1rem 2rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
     
     .hero-subtitle {
         font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-mission {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
     }
     
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0 2rem;
     }
     
     .hero-stats {
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .hero-stat {
+        min-width: 120px;
     }
     
     .section-padding {
@@ -1095,7 +1126,6 @@ body {
 @media print {
     .navbar,
     .hero,
-    .scroll-indicator,
     .modal {
         display: none !important;
     }
