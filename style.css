@@ -10,7 +10,11 @@
 html {
     scroll-behavior: smooth;
 }
-
+.nav-link {
+    font-family: "sayer-spiritual-mn", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
 body {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
@@ -71,68 +75,54 @@ body {
     box-shadow: 0 8px 25px rgba(207, 196, 147, 0.4);
 }
 
-/* Enhanced Navigation */
+/* Enhanced Navigation - Fixed */
 .navbar {
     background: linear-gradient(135deg, var(--usf-green) 0%, var(--usf-dark-green) 100%);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 103, 71, 0.2);
     transition: all 0.3s ease;
-    padding: 1rem;
+    padding: 1rem 0;
     width: 100%;
 }
 
 .navbar.scrolled {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
     background: rgba(0, 103, 71, 0.95);
 }
 
 .navbar-brand {
     color: var(--usf-white) !important;
     font-weight: 700;
-    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-size: 1.2rem;
     font-family: 'Source Sans Pro', sans-serif;
-    white-space: normal;
-    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand img {
     border-radius: 50%;
     margin-right: 12px;
     transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.navbar-brand:hover {
+    color: var(--usf-gold) !important;
 }
 
 .navbar-brand:hover img {
     transform: scale(1.1);
 }
 
-.navbar-nav {
-    padding: 0.5rem 0;
-}
-
-.navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.95) !important;
-    font-weight: 500;
-    margin: 0.25rem 4px;
-    padding: 8px 16px !important;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    position: relative;
-    font-size: 0.95rem;
-    white-space: nowrap;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: var(--usf-dark-green) !important;
-    background: var(--usf-gold);
-    transform: translateY(-2px);
-    font-weight: 600;
-}
-
 .navbar-toggler {
     border: 2px solid rgba(255, 255, 255, 0.3);
     padding: 8px 12px;
     border-radius: 8px;
+    background: transparent;
 }
 
 .navbar-toggler:focus {
@@ -149,6 +139,155 @@ body {
     width: 20px;
     height: 20px;
 }
+
+/* Navbar collapse - Desktop */
+.navbar-collapse {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 4px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--usf-dark-green) !important;
+    background: var(--usf-gold);
+    transform: translateY(-2px);
+    font-weight: 600;
+}
+
+/* Mobile Responsive Design - Switch to hamburger earlier */
+@media (max-width: 1199.98px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+        flex-wrap: wrap;
+        max-width: calc(100vw - 100px);
+    }
+    
+    .navbar-brand img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    
+    .navbar-collapse {
+        background: var(--usf-green);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border: 2px solid var(--usf-gold);
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0.25rem 0;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 1rem !important;
+        margin: 0;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background: var(--usf-gold);
+        color: var(--usf-dark-green) !important;
+        transform: none;
+        border-color: var(--usf-gold);
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+    
+    .navbar-collapse {
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem !important;
+        font-size: 0.95rem;
+    }
+}
+
+/* Smooth collapse animation */
+.navbar-collapse.collapsing {
+    transition: height 0.35s ease;
+}
+
+.navbar-collapse.show {
+    display: block !important;
+}
+
+/* Fix for Bootstrap navbar toggle */
+.navbar-toggler[aria-expanded="true"] {
+    border-color: var(--usf-gold);
+    background: rgba(207, 196, 147, 0.1);
+}
+
+/* Ensure proper z-index */
+.navbar {
+    z-index: 1030;
+}
+
+/* Fix navbar brand text wrapping on very small screens */
+@media (max-width: 350px) {
+    .navbar-brand {
+        font-size: 0.9rem;
+        max-width: calc(100vw - 80px);
+    }
+}
+
 
 /* Hero Section - Enhanced with Video */
 .hero {
