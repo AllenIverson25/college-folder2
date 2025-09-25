@@ -12,37 +12,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/yoe2hqx.css">
     <link rel="stylesheet" href="https://use.typekit.net/tps4dss.css">
+    <link rel="stylesheet" href="herosectionprogram.css">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Enhanced Navigation -->
-    <nav class="navbar navbar-expand-xxl fixed-top">
+   <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img src="imgs/dam.png" alt="USF Logo" width="40" height="40" class="d-inline-block align-text-top">
+            <!-- Mobile brand (visible only on small screens) -->
+            <a class="navbar-brand d-block d-lg-none" href="#home">
+                <img src="imgs/dam.png" alt="USF Logo" width="20" height="10" class="d-inline-block">
                 University of South Florida
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fs-4" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
+                <ul class="navbar-nav align-items-lg-center mx-auto my-2 my-lg-0">
+                    <!-- Left side navigation items -->
+                    <li class="nav-item me-4">
                         <a class="nav-link fs-4" href="#about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-4">
                         <a class="nav-link fs-4" href="#programs">Programs</a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item me-4">
                         <a class="nav-link fs-4" href="#student-life">Student Life</a>
                     </li>
-                    <li class="nav-item ">
+                    
+                    <!-- Centered logo (visible only on desktop) -->
+                    <li class="nav-item">
+                        <a class="navbar-brand d-lg-block d-none me-4" href="#home">
+                            <img src="imgs/dam.png" alt="USF Logo" class="img-fluid w-100 h-10">
+                        </a>
+                    </li>
+                    
+                    <!-- Right side navigation items -->
+                    <li class="nav-item me-4">
                         <a class="nav-link fs-4" href="#financial-aid">Financial Aid</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-4">
                         <a class="nav-link fs-4" href="#alumni">Alumni</a>
                     </li>
                     <li class="nav-item">
@@ -65,7 +76,7 @@
             <p class="hero-mission">Join over 50,000 students at one of America's top public research universities. Experience world-class education, cutting-edge research opportunities, and a vibrant campus community in beautiful Tampa, Florida.</p>
             <div class="hero-buttons">
                 <a href="#programs" class="btn btn-warning btn-lg">Explore Programs</a>
-                <a href="#" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#inquiryModal">Request Info</a>
+                <a href="#" class="btn btn-outline-light btn-lg justify-content-center d-flex" data-bs-toggle="modal" data-bs-target="#inquiryModal">Request Info</a>
             </div>
             </div>
         </div>

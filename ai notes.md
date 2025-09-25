@@ -1,0 +1,1 @@
+I used AI during the brainstorming and planning process to help generate ideas for my college essays and to come up with creative directions for my website project. It was mainly a tool for inspiration, helping me organize thoughts and explore different approaches. All final decisions, writing, and design work were completed by me.
